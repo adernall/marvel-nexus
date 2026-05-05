@@ -37,6 +37,12 @@
   background: transparent;
 }
 
+.admin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .brand {
   display: inline-flex;
   gap: 10px;
@@ -556,6 +562,34 @@ h3 {
   min-height: 190px;
 }
 
+.empty-state {
+  display: grid;
+  min-height: 62svh;
+  place-items: center;
+  align-content: center;
+  gap: 16px;
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #f4c760;
+  background:
+    radial-gradient(circle at 50% 15%, rgba(216, 26, 39, 0.18), transparent 28rem),
+    rgba(13, 13, 14, 0.84);
+  text-align: center;
+}
+
+.empty-state h2 {
+  color: #fff8ef;
+  font-size: clamp(30px, 6vw, 58px);
+  line-height: 1;
+}
+
+.empty-state p {
+  max-width: 620px;
+  color: #c9c0b7;
+  line-height: 1.7;
+}
+
 .form-panel {
   max-width: 880px;
   margin: 0 auto;
@@ -567,6 +601,22 @@ h3 {
   gap: 8px;
   color: #bdb4aa;
   font-size: 13px;
+}
+
+.post-form .checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.checkbox-label input {
+  width: auto;
+  min-height: auto;
 }
 
 .post-form input,
@@ -588,13 +638,170 @@ h3 {
   padding: 18px;
 }
 
+.admin-shell {
+  width: min(1600px, 100%);
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 18px;
+  padding-top: 18px;
+}
+
+.admin-sidebar,
+.admin-main,
+.admin-list,
+.admin-form-placeholder {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(13, 13, 14, 0.84);
+}
+
+.admin-sidebar {
+  position: sticky;
+  top: 104px;
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  height: calc(100svh - 122px);
+  padding: 14px;
+}
+
+.admin-sidebar h2 {
+  margin: 5px 0 10px;
+  color: #fff8ef;
+  font-size: 22px;
+}
+
+.admin-tab {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 8px;
+  color: #c9c0b7;
+  background: transparent;
+  text-align: left;
+}
+
+.admin-tab:hover,
+.admin-tab.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.admin-tab.active {
+  border: 1px solid rgba(244, 199, 96, 0.2);
+  background: linear-gradient(135deg, rgba(210, 24, 38, 0.65), rgba(219, 159, 58, 0.25));
+}
+
+.admin-main {
+  min-height: calc(100svh - 122px);
+  padding: 18px;
+}
+
+.admin-page {
+  display: grid;
+  gap: 18px;
+}
+
+.admin-editor-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 420px) minmax(0, 1fr);
+  gap: 18px;
+}
+
+.admin-list {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  max-height: calc(100svh - 190px);
+  overflow: auto;
+  padding: 12px;
+}
+
+.admin-list-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.admin-list-row > button:first-child {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  padding: 12px;
+  color: #fff8ef;
+  background: transparent;
+  text-align: left;
+}
+
+.admin-list-row span {
+  color: #9e968e;
+  font-size: 12px;
+}
+
+.icon-danger {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  margin-right: 6px;
+  border-radius: 8px;
+  color: #ff9ba2;
+  background: rgba(212, 21, 35, 0.12);
+}
+
+.admin-form {
+  align-self: start;
+}
+
+.admin-form-placeholder {
+  display: grid;
+  min-height: 260px;
+  place-items: center;
+  align-content: center;
+  gap: 10px;
+  padding: 24px;
+  color: #f4c760;
+  text-align: center;
+}
+
+.admin-form-placeholder p {
+  color: #bdb4aa;
+}
+
+.compact-action {
+  min-height: 36px;
+  padding: 8px 12px;
+}
+
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .quiet-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 18px;
   padding: 9px 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   color: #f4c760;
   background: rgba(255, 255, 255, 0.035);
+}
+
+.quiet-action.danger {
+  color: #ffb8bc;
+  background: rgba(212, 21, 35, 0.12);
 }
 
 .search-group {
@@ -647,8 +854,15 @@ h3 {
   .hero-panel,
   .detail-hero,
   .split-grid,
-  .three-grid {
+  .three-grid,
+  .admin-layout,
+  .admin-editor-grid {
     grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    position: static;
+    height: auto;
   }
 }
 
